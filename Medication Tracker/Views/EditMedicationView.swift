@@ -98,17 +98,17 @@ struct EditMedicationView: View {
                             }
                         }
                         
-                        VStack(alignment: .leading, spacing: 6) {
+                        HStack(alignment: .center, spacing: 6) {
                             Text("Frequency")
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
-                            
+                            Spacer()
                             Picker("Frequency", selection: $frequency.animation()) {
                                 ForEach(MedicationFrequency.allCases) { f in
                                     Text(f.title).tag(f)
                                 }
                             }
-                            .pickerStyle(.segmented)
+                            .pickerStyle(.menu)
                         }
                     }
                     .padding(16)

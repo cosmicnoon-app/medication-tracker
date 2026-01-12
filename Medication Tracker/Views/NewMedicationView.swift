@@ -120,7 +120,7 @@ struct NewMedicationView: View {
                             }
                         }
 
-                        VStack(alignment: .leading, spacing: 6) {
+                        HStack(alignment: .center, spacing: 6) {
                             HStack(spacing: 8) {
                                 Image(systemName: "repeat")
                                     .font(.subheadline)
@@ -129,14 +129,14 @@ struct NewMedicationView: View {
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                             }
-
+                            Spacer()
                             Picker("Frequency", selection: $frequency.animation()) {
                                 ForEach(MedicationFrequency.allCases) { f in
                                     Text(f.title)
                                         .tag(f)
                                 }
                             }
-                            .pickerStyle(.segmented)
+                            .pickerStyle(.menu)
                         }
                     }
                     .padding(16)
